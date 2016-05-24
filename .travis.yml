@@ -19,7 +19,7 @@ before_install:
   - if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
 
   # Install spacejam
-  - npm install -g https://github.com/serut/spacejam/tarball/master coveralls eslint
+  - npm install -g https://github.com/serut/spacejam/tarball/refactor coveralls eslint
 
 script:
     # Unit test using mocha
