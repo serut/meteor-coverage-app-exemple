@@ -1,0 +1,33 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - 0.10.40
+
+cache:
+  directories:
+    - $HOME/.meteor
+    - $HOME/.npm
+
+before_cache:
+  - rm -f $HOME/.meteor/log/*.log
+
+before_install:
+  # Download Meteor
+  - PATH=$PATH:$HOME/.meteor
+  - if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
+
+  # Install spacejam
+  - npm install -g https://github.com/serut/spacejam/tarball/master coveralls eslint
+
+script:
+    # Unit test using mocha
+  - spacejam test            --loglevel debug --driver-package=practicalmeteor:mocha-console-runner --coverage
+    # Integration test using mocha
+  - spacejam test --full-app --loglevel debug --driver-package=practicalmeteor:mocha-console-runner --coverage
+    # Package test using mocha
+  - spacejam test-packages   --loglevel debug --driver-package=practicalmeteor:mocha-console-runner --coverage
+    # Package test using tinytest
+  - spacejam test-packages   --loglevel debug --coverage && cat lcov.info | coveralls
+  - eslint .
