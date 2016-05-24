@@ -18,7 +18,7 @@ before_install:
 
   # Install spacejam
   - npm install -g coffee-script@1.8.0
-  - npm install -g https://github.com/serut/spacejam/tarball/refactor coveralls eslint eslint-config-meteor
+  - npm install -g https://github.com/serut/spacejam/tarball/refactor coveralls
 
 script:
     # Unit test using mocha
@@ -31,4 +31,3 @@ script:
   - spacejam test-packages   --loglevel debug --coverage
     # Package test using tinytest creates a coverage file with wrong path ?
   - cat lcov.info
-  - eslint .
