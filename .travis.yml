@@ -19,15 +19,16 @@ before_install:
   - if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
 
   # Install spacejam
+  - npm install -g coffee-script@1.8.0
   - npm install -g https://github.com/serut/spacejam/tarball/refactor coveralls eslint
 
 script:
     # Unit test using mocha
-  - coffee spacejam test            --loglevel debug --driver-package=practicalmeteor:mocha-console-runner --coverage
+  - spacejam test            --loglevel debug --driver-package=practicalmeteor:mocha-console-runner --coverage
     # Integration test using mocha
-  - coffee spacejam test --full-app --loglevel debug --driver-package=practicalmeteor:mocha-console-runner --coverage
+  - spacejam test --full-app --loglevel debug --driver-package=practicalmeteor:mocha-console-runner --coverage
     # Package test using mocha
-  - coffee spacejam test-packages   --loglevel debug --driver-package=practicalmeteor:mocha-console-runner --coverage
+  - spacejam test-packages   --loglevel debug --driver-package=practicalmeteor:mocha-console-runner --coverage
     # Package test using tinytest
-  - coffee spacejam test-packages   --loglevel debug --coverage && cat lcov.info | coveralls
+  - spacejam test-packages   --loglevel debug --coverage && cat lcov.info | coveralls
   - eslint .
