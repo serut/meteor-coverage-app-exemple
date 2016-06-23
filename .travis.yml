@@ -21,6 +21,7 @@ before_install:
   - npm install -g https://github.com/serut/spacejam/tarball/master coveralls
 
 script:
+  - meteor test --once --driver-package dispatch:mocha-phantomjs
     # Unit test using mocha
   - spacejam test            --loglevel debug --driver-package dispatch:mocha-phantomjs --coverage
     # Integration test using mocha
