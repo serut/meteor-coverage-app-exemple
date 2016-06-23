@@ -21,14 +21,12 @@ before_install:
   - npm install -g https://github.com/serut/spacejam/tarball/master coveralls
 
 script:
-  - meteor remove practicalmeteor:mocha
-  - meteor add dispatch:mocha-phantomjs
     # Unit test using mocha
-  - spacejam test            --loglevel debug --driver-package=practicalmeteor:mocha-phantomjs --coverage
+  - spacejam test            --loglevel debug --driver-package dispatch:mocha-phantomjs --coverage
     # Integration test using mocha
-  - spacejam test --full-app --loglevel debug --driver-package=practicalmeteor:mocha-phantomjs --coverage && cat lcov.info | coveralls
+  - spacejam test --full-app --loglevel debug --driver-package dispatch:mocha-phantomjs --coverage && cat lcov.info | coveralls
     # Package test using mocha
-  - spacejam test-packages   --loglevel debug --driver-package=practicalmeteor:mocha-phantomjs --coverage
+  - spacejam test-packages   --loglevel debug --driver-package dispatch:mocha-phantomjs --coverage
     # Package test using tinytest
   - spacejam test-packages   --loglevel debug --coverage
     # Package test using tinytest creates a coverage file with wrong path ?

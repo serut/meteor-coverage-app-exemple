@@ -20,6 +20,6 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 dburles:eslint
-practicalmeteor:mocha
-practicalmeteor:mocha-console-runner
+dispatch:mocha-phantomjs
+practicalmeteor:mocha@2.4.5_4
 lmieulet:meteor-coverage
