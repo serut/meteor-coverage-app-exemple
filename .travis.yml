@@ -25,9 +25,12 @@ script:
     # and practicalmeteor:mocha-console-runner is outdated
     # moreover dispatch:mocha-phantomjs is not working on windows (TypeError: Cannot call method 'push' of undefined...)
     # ==> Coverage & CI is not working right now !
-  - meteor test            --once  --driver-package dispatch:mocha-phantomjs
-  - meteor test --full-app --once  --driver-package dispatch:mocha-phantomjs
-  - meteor test-packages   --once  --driver-package dispatch:mocha-phantomjs
+
+    # Update practicalmeteor:mocha-console-runner, looks good
+
+  - meteor test            --once  --driver-package practicalmeteor:mocha-console-runner
+  - meteor test --full-app --once  --driver-package practicalmeteor:mocha-console-runner
+  - meteor test-packages   --once  --driver-package practicalmeteor:mocha-console-runner
     # Unit test using mocha
     # - spacejam test            --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage
     # Integration test using mocha
