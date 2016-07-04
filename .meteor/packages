@@ -21,5 +21,5 @@ autopublish@1.0.7             # Publish all data to the clients (for prototyping
 insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
 dburles:eslint
 practicalmeteor:mocha@=2.4.6-rc.3
-practicalmeteor:mocha-console-runner@0.2.2
+practicalmeteor:mocha-console-runner@0.2.3
 lmieulet:meteor-coverage
