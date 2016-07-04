@@ -28,15 +28,12 @@ script:
 
     # Update practicalmeteor:mocha-console-runner, looks good
 
-  - meteor test            --once  --driver-package practicalmeteor:mocha-console-runner
-  - meteor test --full-app --once  --driver-package practicalmeteor:mocha-console-runner
-  - meteor test-packages   --once  --driver-package practicalmeteor:mocha-console-runner
     # Unit test using mocha
-    # - spacejam test            --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage
+  - spacejam test            --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage
     # Integration test using mocha
-    # - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage && cat lcov.info | coveralls
+  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage && cat lcov.info | coveralls
     # Package test using mocha
-    # - spacejam test-packages   --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage
+  - spacejam test-packages   --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage
     # Package test using tinytest
   - spacejam test-packages   --loglevel debug --coverage
     # Package test using tinytest creates a coverage file with wrong path ?
