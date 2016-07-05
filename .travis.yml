@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - 0.10.40
+  - 0.10.43
 
 cache:
   directories:
@@ -17,8 +17,7 @@ before_install:
   - if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
 
   # Install spacejam
-  - npm install -g coffee-script@1.8.0
-  - npm install -g https://github.com/serut/spacejam/tarball/master coveralls
+  - npm install -g coffee-script@1.8.0 https://github.com/serut/spacejam/tarball/master coveralls  codecov.io
 
 script:
     # Spacejam is not supported by dispatch:mocha-phantomjs
@@ -31,7 +30,9 @@ script:
     # Unit test using mocha
   - spacejam test            --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage
     # Integration test using mocha
-  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage && cat lcov.info | coveralls
+  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage
+  - cat lcov.info | coveralls || true # ignore coveralls error
+  - cat lcov.info | codecov || true # ignore codecov error
     # Package test using mocha
   - spacejam test-packages   --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage
     # Package test using tinytest

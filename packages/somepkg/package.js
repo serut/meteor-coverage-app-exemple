@@ -19,7 +19,7 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
-  api.use(['practicalmeteor:mocha', 'lmieulet:meteor-coverage@0.8.0']);
+  api.use(['practicalmeteor:mocha', 'lmieulet:meteor-coverage@0.8.1']);
   api.use('somepkg');
   api.mainModule('somepkg-tests.js');
 });
