@@ -1,4 +1,4 @@
-import './FooServiceTest'
+import './FooServiceTest';
 FooService = {
-    a: 2
+  a: 2,
 };

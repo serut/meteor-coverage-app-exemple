@@ -4,6 +4,6 @@ describe('my package', function () {
   it('run some mocha test', function () {
         // This code will be executed by the test driver when the app is started
         // in the correct mode
-        chai.assert.equal(true, true);
-  })
-})
+    chai.assert.equal(true, true);
+  });
+});

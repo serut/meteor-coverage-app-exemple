@@ -1,1 +1,1 @@
-console.log("John jackson have been executed but not covered (regex)")
+console.log('John jackson have been executed but not covered (regex)');

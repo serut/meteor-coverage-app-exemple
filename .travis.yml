@@ -20,13 +20,6 @@ before_install:
   - npm install -g coffee-script@1.8.0 https://github.com/serut/spacejam/tarball/master coveralls  codecov.io
 
 script:
-    # Spacejam is not supported by dispatch:mocha-phantomjs
-    # and practicalmeteor:mocha-console-runner is outdated
-    # moreover dispatch:mocha-phantomjs is not working on windows (TypeError: Cannot call method 'push' of undefined...)
-    # ==> Coverage & CI is not working right now !
-
-    # Update practicalmeteor:mocha-console-runner, looks good
-
     # Unit test using mocha
   - spacejam test            --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage
     # Integration test using mocha
@@ -39,3 +32,6 @@ script:
   - spacejam test-packages   --loglevel debug --coverage
     # Package test using tinytest creates a coverage file with wrong path ?
   - cat lcov.info
+    # Trying to use the new package.json and meteor run command
+  - meteor npm run test-coverage-app-unit || true
+
