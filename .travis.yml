@@ -18,7 +18,7 @@ before_install:
 
   # Install spacejam
   # Todo: add these dependencies into package.json
-  - npm install -g https://github.com/serut/spacejam/tarball/windows-suppport-rc4 coveralls codecov.io
+  - npm install
 
 script:
     # Unit test using mocha
@@ -28,8 +28,8 @@ script:
   - meteor npm run test-coverage-app-full
 
     # Save coverage now
-  - cat lcov.info | coveralls || true # ignore coveralls error
-  - cat lcov.info | codecov || true # ignore codecov error
+  - cat lcov.info | ./node_modules/coveralls/bin/coveralls.js || true # ignore coveralls error
+  - cat lcov.info | ./node_modules/codecov.io/bin/codecov.io.js || true # ignore codecov error
 
     # Package test using mocha
   - meteor npm run test-coverage-packages-mocha
