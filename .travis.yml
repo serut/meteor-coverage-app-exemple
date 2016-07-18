@@ -17,21 +17,23 @@ before_install:
   - if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
 
   # Install spacejam
-  - npm install -g coffee-script@1.8.0 https://github.com/serut/spacejam/tarball/master coveralls  codecov.io
+  # Todo: add these dependencies into package.json
+  - npm install -g https://github.com/serut/spacejam/tarball/windows-suppport-rc4 coveralls codecov.io
 
 script:
     # Unit test using mocha
-  - spacejam test            --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage
+  - meteor npm run test-coverage-app-unit
+
     # Integration test using mocha
-  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage
+  - meteor npm run test-coverage-app-full
+
+    # Save coverage now
   - cat lcov.info | coveralls || true # ignore coveralls error
   - cat lcov.info | codecov || true # ignore codecov error
-    # Package test using mocha
-  - spacejam test-packages   --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage
-    # Package test using tinytest
-  - spacejam test-packages   --loglevel debug --coverage
-    # Package test using tinytest creates a coverage file with wrong path ?
-  - cat lcov.info
-    # Trying to use the new package.json and meteor run command
-  - meteor npm run test-coverage-app-unit || true
 
+    # Package test using mocha
+  - meteor npm run test-coverage-packages-mocha
+
+    # Package test using tinytest + coverage
+    # is not supported anymore 
+    #- spacejam test-packages    --loglevel debug --coverage="out_lcovonly"
