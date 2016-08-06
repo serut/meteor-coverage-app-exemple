@@ -35,7 +35,7 @@ insecure@1.0.7
 jquery@1.11.9
 launch-screen@1.0.12
 livedata@1.0.18
-lmieulet:meteor-coverage@0.8.1
+lmieulet:meteor-coverage@0.9.0
 logging@1.1.14
 meteor@1.2.16
 meteor-base@1.0.4

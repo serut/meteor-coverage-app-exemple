@@ -24,4 +24,4 @@ practicalmeteor:chai
 practicalmeteor:mocha@2.4.5_5
 practicalmeteor:mocha-console-runner
 
-lmieulet:meteor-coverage@0.8.1
+lmieulet:meteor-coverage@0.9.0
