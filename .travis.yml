@@ -21,6 +21,8 @@ before_install:
   - npm install
 
 script:
+  - mkdir .coverage
+
     # Unit test using mocha
   - meteor npm run test-coverage-app-unit
 
@@ -35,5 +37,5 @@ script:
   - meteor npm run test-coverage-packages-mocha
 
     # Package test using tinytest + coverage
-    # is not supported anymore 
+    # is not supported anymore
     #- spacejam test-packages    --loglevel debug --coverage="out_lcovonly"
