@@ -10,6 +10,8 @@ checkout:
     - git submodule update --init
 test:
   override:
+    - mkdir .coverage
+
     # Unit test using mocha
     - meteor npm run test-coverage-app-unit
 
