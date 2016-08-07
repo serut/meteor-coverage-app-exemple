@@ -24,17 +24,17 @@ script:
   - rm -rf .coverage/ && mkdir .coverage
 
     # Unit test using mocha
-  - meteor npm run test-coverage-app-unit
+  - meteor npm run -coverage-app-unit
 
     # Integration test using mocha
-  - meteor npm run test-coverage-app-full
+  - meteor npm run coverage-app-full
 
     # Save coverage now
   - cat lcov.info | ./node_modules/coveralls/bin/coveralls.js || true # ignore coveralls error
   - cat lcov.info | ./node_modules/codecov.io/bin/codecov.io.js || true # ignore codecov error
 
     # Package test using mocha
-  - meteor npm run test-coverage-packages-mocha
+  - meteor npm run coverage-packages-mocha
 
     # Package test using tinytest + coverage
     # is not supported anymore
