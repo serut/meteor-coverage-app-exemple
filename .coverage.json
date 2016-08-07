@@ -59,12 +59,16 @@
                 "/practicalmeteor_loglevel.js",
                 "/practicalmeteor_sinon.js",
                 "/practicalmeteor_mocha-console-runner.js",
-                "/practicalmeteor_mocha-core.js"
+                "/practicalmeteor_mocha-core.js",
+                "/kadira_flow-router.js"
             ]
         },
         "others": [
             ".*/tests/.*.js",
-            ".*tests.js"
+            ".*tests.js",
+            ".*template\\.[A-z.-_0-9\\.]+js",
+            ".*test[A-z.-_0-9\\.]+js"
         ]
-    }
+    },
+    "output": "./.coverage"
 }

@@ -21,7 +21,7 @@ before_install:
   - npm install
 
 script:
-  - mkdir .coverage
+  - rm -rf .coverage/ && mkdir .coverage
 
     # Unit test using mocha
   - meteor npm run test-coverage-app-unit

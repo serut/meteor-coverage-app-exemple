@@ -1,27 +1,75 @@
-# Meteor packages used by this project, one per line.
-# Check this file (and the other files in this directory) into your repository.
-#
-# 'meteor add' and 'meteor remove' will edit this file for you,
-# but you can also edit it by hand.
 
-meteor-base@1.0.4             # Packages every Meteor app needs to have
-mobile-experience@1.0.4       # Packages for a great mobile UX
-mongo@1.1.10                   # The database Meteor supports right now
-blaze-html-templates@1.0.4    # Compile .html files into Meteor Blaze views
-reactive-var@1.0.10            # Reactive variable for tracker
-jquery@1.11.9                  # Helpful client-side library
-tracker@1.1.0                 # Meteor's client-side reactive programming library
+# meteor libraries
+meteor-base
+ecmascript
+es5-shim
+check
+tracker
 
-standard-minifier-css@1.1.8   # CSS minifier run for production mode
-standard-minifier-js@1.1.8    # JS minifier run for production mode
-es5-shim@4.6.13                # ECMAScript 5 compatibility for older browsers.
-ecmascript@0.5.7              # Enable ECMAScript2015+ syntax in app code
+# standard libraries
+jquery
+underscore
+less
 
-autopublish@1.0.7             # Publish all data to the clients (for prototyping)
-insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
+# ui
+blaze-html-templates
+reactive-dict
+aldeed:template-extension
+reactive-var
+percolate:momentum
 
+# data
+mongo
+aldeed:simple-schema
+aldeed:collection2
+dburles:collection-helpers
+reywood:publish-composite
+mdg:validated-method
+mdg:validation-error
+
+# routing
+kadira:flow-router
+kadira:blaze-layout
+arillo:flow-router-helpers
+zimme:active-route
+
+# i18n
+tap:i18n
+
+# accounts
+# accounts-password # not working on windows, like simple:rest-account
+# useraccounts:core Doesn't work :Error: AccountsTemplates: You must add at least one account service! at meteor://app/packages/useraccounts_core/lib/server.js:183:1
+# useraccounts:unstyled
+# useraccounts:flow-routing
+softwarerero:accounts-t9n
+
+# mobile
+crosswalk
+mobile-experience
+chriswessels:hammer
+
+# production
+juliancwirko:postcss
+standard-minifier-js
+ddp-rate-limiter
+
+# rest apis
+# simple:rest-accounts-password # not working on windows 10 node v4.4.7 npm  v3.10 Failed at the bcrypt@0.7.8 install script 'node-gyp rebuild'.
+simple:rest
+
+# testing
+factory
+xolvio:cleaner
+dispatch:mocha-phantomjs
 practicalmeteor:chai
-practicalmeteor:mocha@2.4.5_5
-practicalmeteor:mocha-console-runner
+practicalmeteor:sinon
+practicalmeteor:mocha
+hwillson:stub-collections
+johanbrook:publication-collector
 
-lmieulet:meteor-coverage@0.9.0
+
+lmieulet:meteor-coverage
+
+# production - covered
+app-prod-security
+somepkg

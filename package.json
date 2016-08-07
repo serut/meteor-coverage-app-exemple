@@ -6,9 +6,10 @@
     "test-app": "meteor test --full-app --once --driver-package dispatch:mocha-phantomjs",
     "test-watch": "meteor test --driver-package practicalmeteor:mocha",
     "test-app-watch": "meteor test --full-app --driver-package practicalmeteor:mocha",
-    "test-coverage-app-unit": "spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage out_coverage",
-    "test-coverage-app-full": "spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage 'in_coverage|out_lcovonly'",
-    "test-coverage-packages-mocha": "spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage out_lcovonly",
+    "coverage-app-unit-html": "spacejam test           --coverage out_html --driver-package practicalmeteor:mocha-console-runner",
+    "coverage-app-unit": "spacejam test                --coverage out_coverage --driver-package practicalmeteor:mocha-console-runner",
+    "coverage-app-full": "spacejam test --full-app     --coverage 'in_coverage|out_lcovonly' --driver-package practicalmeteor:mocha-console-runner",
+    "coverage-packages-mocha": "spacejam test-packages --coverage out_lcovonly --driver-package practicalmeteor:mocha-console-runner",
     "lint": "eslint .",
     "lint-fix": "eslint --fix ."
   },
@@ -18,18 +19,25 @@
     "faker": "^3.0.1"
   },
   "devDependencies": {
+    "babel-eslint": "^6.1.0",
     "eslint": "^2.13.1",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-import-resolver-meteor": "^0.2.4",
-    "eslint-plugin-import": "^1.10.2",
-    "eslint-plugin-jsx-a11y": "^1.5.5",
+    "eslint-plugin-import": "^1.10.3",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
     "eslint-plugin-meteor": "^3.6.0",
     "eslint-plugin-react": "^5.2.2",
+    "shell-source": "^1.1.0",
     "spacejam": "https://github.com/serut/spacejam/tarball/windows-suppport-rc4",
     "coveralls": "^2.11.11",
-    "codecov.io": "^0.1.6"
+    "codecov.io": "^0.1.6",
+    "codacy-coverage": "^1.1.3"
   },
   "eslintConfig": {
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "allowImportExportEverywhere": true
+    },
     "plugins": [
       "meteor"
     ],
