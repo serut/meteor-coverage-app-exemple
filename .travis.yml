@@ -24,7 +24,7 @@ script:
   - rm -rf .coverage/ && mkdir .coverage
 
     # Unit test using mocha
-  - meteor npm run -coverage-app-unit
+  - meteor npm run coverage-app-unit
 
     # Integration test using mocha
   - meteor npm run coverage-app-full
