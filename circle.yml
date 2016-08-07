@@ -29,13 +29,13 @@ test:
     - rm -rf .coverage/ && mkdir .coverage
 
     # Unit test using mocha
-    - meteor npm run test-coverage-app-unit
+    - meteor npm run coverage-app-unit
 
     # Integration test using mocha
-    - meteor npm run test-coverage-app-full
+    - meteor npm run coverage-app-full
 
     # Package test using mocha
-    - meteor npm run test-coverage-packages-mocha
+    - meteor npm run coverage-packages-mocha
 
     # meteor/todos tests
     - ./tests/acceptance_run
