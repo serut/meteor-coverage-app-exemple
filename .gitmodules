@@ -6,4 +6,4 @@
 	url = https://github.com/serut/meteor-coverage.git
 [submodule "packages/meteor-coverage-self-instrumenter"]
 	path = packages/meteor-coverage-self-instrumenter
-	url = https://github.com/serut/meteor-coverage-self-instrumenter
+	url = https://github.com/serut/meteor-coverage-self-instrumenter.git
