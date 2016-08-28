@@ -1,25 +1,25 @@
 
 # meteor libraries
-meteor-base
-ecmascript
-es5-shim
-check
-tracker
+meteor-base@1.0.4
+ecmascript@0.5.8
+es5-shim@4.6.14
+check@1.2.3
+tracker@1.1.0
 
 # standard libraries
-jquery
-underscore
-less
+jquery@1.11.9
+underscore@1.0.9
+less@2.7.5
 
 # ui
-blaze-html-templates
-reactive-dict
+blaze-html-templates@1.0.4
+reactive-dict@1.1.8
 aldeed:template-extension
-reactive-var
+reactive-var@1.0.10
 percolate:momentum
 
 # data
-mongo
+mongo@1.1.12
 aldeed:simple-schema
 aldeed:collection2
 dburles:collection-helpers
@@ -44,14 +44,14 @@ tap:i18n
 softwarerero:accounts-t9n
 
 # mobile
-crosswalk
-mobile-experience
+crosswalk@1.6.2
+mobile-experience@1.0.4
 chriswessels:hammer
 
 # production
 juliancwirko:postcss
-standard-minifier-js
-ddp-rate-limiter
+standard-minifier-js@1.2.0
+ddp-rate-limiter@1.0.5
 
 # rest apis
 # simple:rest-accounts-password # not working on windows 10 node v4.4.7 npm  v3.10 Failed at the bcrypt@0.7.8 install script 'node-gyp rebuild'.
@@ -73,3 +73,4 @@ lmieulet:meteor-coverage
 # production - covered
 app-prod-security
 somepkg
+shell-server
