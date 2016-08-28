@@ -1,22 +1,151 @@
 machine:
   node:
-    version: 0.10.43
+    version: 5.2.0
 dependencies:
   override:
     - curl https://install.meteor.com | /bin/sh
     - npm install
+  cache_directories:
+    - "~/.npm"
+    - "~/.meteor"
+    - "node_modules"
+    - "./.meteor/local/build"
+    - "./.meteor/local/bundler-cache"
+    - "./.meteor/local/isopacks"
+    - "./.meteor/local/plugin-cache"
+    - "/home/ubuntu/nvm/versions/node/v5.2.0/bin"
+    - "/home/ubuntu/nvm/versions/node/v5.2.0/lib/node_modules"
 checkout:
   post:
     - git submodule update --init
 test:
+  pre:
+    - mkdir -p $CIRCLE_TEST_REPORTS/cucumber
   override:
-    - mkdir .coverage
+    # Create the output folder, because would fail if it does not exist
+    - rm -rf .coverage/ && mkdir .coverage
 
     # Unit test using mocha
-    - meteor npm run test-coverage-app-unit
+    - meteor npm run coverage-app-unit
 
     # Integration test using mocha
-    - meteor npm run test-coverage-app-full
+    - meteor npm run coverage-app-full
 
     # Package test using mocha
-    - meteor npm run test-coverage-packages-mocha
+    - meteor npm run coverage-packages-mocha
+
+    # Reliability test ~100 random tests
+
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+
+
+
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+
+
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+
+
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-packages-mocha
