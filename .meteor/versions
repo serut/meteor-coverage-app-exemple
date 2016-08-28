@@ -60,7 +60,7 @@ kadira:flow-router@2.12.1
 launch-screen@1.0.12
 less@2.7.5
 livedata@1.0.18
-lmieulet:meteor-coverage@0.9.1
+lmieulet:meteor-coverage@0.9.4
 logging@1.1.15
 mdg:validated-method@1.1.0
 mdg:validation-error@0.5.1
