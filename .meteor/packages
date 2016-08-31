@@ -37,10 +37,10 @@ zimme:active-route
 tap:i18n
 
 # accounts
-# accounts-password # not working on windows, like simple:rest-account
-# useraccounts:core Doesn't work :Error: AccountsTemplates: You must add at least one account service! at meteor://app/packages/useraccounts_core/lib/server.js:183:1
-# useraccounts:unstyled
-# useraccounts:flow-routing
+accounts-password
+useraccounts:core
+useraccounts:unstyled
+useraccounts:flow-routing
 softwarerero:accounts-t9n
 
 # mobile
@@ -54,7 +54,7 @@ standard-minifier-js@1.2.0
 ddp-rate-limiter@1.0.5
 
 # rest apis
-# simple:rest-accounts-password # not working on windows 10 node v4.4.7 npm  v3.10 Failed at the bcrypt@0.7.8 install script 'node-gyp rebuild'.
+simple:rest-accounts-password
 simple:rest
 
 # testing
