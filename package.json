@@ -9,7 +9,8 @@
     "coverage-app-unit-html": "spacejam test           --coverage out_html --driver-package practicalmeteor:mocha-console-runner",
     "coverage-app-unit": "spacejam test                --coverage out_coverage --driver-package practicalmeteor:mocha-console-runner",
     "test-app-unit": "spacejam test                                            --driver-package practicalmeteor:mocha-console-runner",
-    "coverage-app-full": "spacejam test --full-app     --coverage 'in_coverage|out_lcovonly' --driver-package practicalmeteor:mocha-console-runner",
+    "coverage-app-full": "spacejam test --full-app     --coverage 'out_lcovonly' --driver-package practicalmeteor:mocha-console-runner",
+    "test-app-full": "spacejam test     --full-app                                           --driver-package practicalmeteor:mocha-console-runner",
     "coverage-packages-mocha": "spacejam test-packages --coverage out_lcovonly --driver-package practicalmeteor:mocha-console-runner",
     "lint": "eslint .",
     "lint-fix": "eslint --fix ."

@@ -36,6 +36,247 @@ test:
 
 
 
+
+
+    # Reliability full app test ~100 tests WITH coverage !!!!!!!!!!!!!!!!!!!!!!!!!!!
+    # (then without coverage ...,) see below
+    # and then everything with unit test
+    # Thanks circle.ci for these hours of tests
+
+
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+
+
+
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+
+
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+
+
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
+
+
+
+
+
+    # Reliability test ~100 tests without coverage !!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+
+
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+
+
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+    - meteor npm run test-app-full
+
+
     # Reliability test ~100 tests WITH coverage !!!!!!!!!!!!!!!!!!!!!!!!!!!
     # (then without coverage ...,) see below
 
