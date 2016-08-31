@@ -26,126 +26,248 @@ test:
     - rm -rf .coverage/ && mkdir .coverage
 
     # Unit test using mocha
-    - meteor npm run coverage-app-unit
+    - meteor npm run test-app-unit
 
     # Integration test using mocha
-    - meteor npm run coverage-app-full
+    #- meteor npm run coverage-app-full
 
     # Package test using mocha
-    - meteor npm run coverage-packages-mocha
-
-    # Reliability test ~100 random tests
-
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
+    - meteor npm run test-app-unit
 
 
 
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
+    # Reliability test ~100 tests WITH coverage !!!!!!!!!!!!!!!!!!!!!!!!!!!
+    # (then without coverage ...,) see below
 
 
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+
+
+
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
 
 
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+
 
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
     - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-packages-mocha
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+    - meteor npm run coverage-app-unit
+
+
+
+
+
+    # Reliability test ~100 tests without coverage !!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+
+
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+
+
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
+    - meteor npm run test-app-unit
