@@ -29,7 +29,7 @@ test:
     - meteor npm run test-app-unit
 
     # Integration test using mocha
-    #- meteor npm run coverage-app-full
+    - meteor npm run coverage-app-full
 
     # Package test using mocha
     - meteor npm run test-app-unit
