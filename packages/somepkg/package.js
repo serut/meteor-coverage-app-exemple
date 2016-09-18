@@ -23,3 +23,7 @@ Package.onTest(function (api) {
   api.use('somepkg');
   api.mainModule('somepkg-tests.js');
 });
+
+Npm.depends({
+  "chai-as-promised": "5.3.0"
+});
