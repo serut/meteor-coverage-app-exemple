@@ -1,0 +1,26 @@
+{
+  "atom": {
+    "rewriteTsconfig": true
+  },
+  "buildOnSave": true,
+  "compileOnSave": true,
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "isolatedModules": false,
+    "module": "es6",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "outDir": "build",
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es5"
+  },
+  "files": [
+    "school.d.ts",
+    "school.ts"
+  ],
+  "filesGlob": [
+    "*.ts"
+  ]
+}
