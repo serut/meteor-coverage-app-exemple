@@ -25,6 +25,9 @@ test:
     # Create the output folder, because would fail if it does not exist
     - rm -rf .coverage/ && mkdir .coverage
 
+    # New general
+    - meteor npm run test
+
     # Unit test using mocha
     - meteor npm run test-app-unit
 
@@ -32,10 +35,247 @@ test:
     - meteor npm run coverage-app-full
 
     # Package test using mocha
-    - meteor npm run test-app-unit
+    - meteor npm run coverage-packages
 
 
 
+    # Reliability mocha package test ~100 tests WITH coverage !!!!!!!!!!!!!!!!!!!!!!!!!!!
+    # (then without coverage ...,) see below
+    # and then everything with full app &  unit
+    # Thanks circle.ci for these hours of tests
+
+
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+
+
+
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+
+
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+
+
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+    - meteor npm run coverage-packages
+
+
+
+
+
+    # Reliability test ~100 tests without coverage !!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+
+
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+
+
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
+    - meteor npm run test-packages
 
 
     # Reliability full app test ~100 tests WITH coverage !!!!!!!!!!!!!!!!!!!!!!!!!!!

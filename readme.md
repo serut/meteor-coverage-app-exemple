@@ -42,3 +42,9 @@ Required : See `.meteor/packages`
 -   `--driver-package=practicalmeteor:mocha-console-runner`
 
 See the .travis.yml for additional informations
+
+## update meteor-coverage
+
+    git submodule update --remote
+    cd packages/meteor-coverage
+    git pull [..]
