@@ -4,7 +4,7 @@ machine:
 dependencies:
   override:
     - curl https://install.meteor.com | /bin/sh
-    - npm install
+    - meteor npm install
   cache_directories:
     - "~/.npm"
     - "~/.meteor"
@@ -32,7 +32,7 @@ test:
     - meteor npm run test-app-unit
 
     # Integration test using mocha
-    - meteor npm run coverage-app-full
+    - meteor npm run test-app-full
 
     # Package test using mocha
     - meteor npm run coverage-packages

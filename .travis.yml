@@ -12,14 +12,11 @@ before_cache:
   - rm -f $HOME/.meteor/log/*.log
 
 before_install:
-  # Download Meteor
   - PATH=$PATH:$HOME/.meteor
+  # Download Meteor
   - if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
 
-  # Install spacejam
-  # Todo: add these dependencies into package.json
-  - npm install
-
+  - meteor npm install
 script:
     # Run all tests:  Unit test, Integration test, Package test
   - meteor npm run test
@@ -42,7 +39,7 @@ script:
   - cat .coverage/lcov.info
 
     # Package test using mocha
-  - meteor npm run coverage-packages-mocha
+  - meteor npm run coverage-packages
     # Save coverage now
   - cat .coverage/lcov.info
   
