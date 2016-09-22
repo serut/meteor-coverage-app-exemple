@@ -1,769 +1,663 @@
 machine:
   node:
-    version: 5.2.0
-dependencies:
-  override:
-    - curl https://install.meteor.com | /bin/sh
-    - meteor npm install
-  cache_directories:
-    - "~/.npm"
-    - "~/.meteor"
-    - "node_modules"
-    - "./.meteor/local/build"
-    - "./.meteor/local/bundler-cache"
-    - "./.meteor/local/isopacks"
-    - "./.meteor/local/plugin-cache"
-    - "/home/ubuntu/nvm/versions/node/v5.2.0/bin"
-    - "/home/ubuntu/nvm/versions/node/v5.2.0/lib/node_modules"
+    version: "5.2.0"
 checkout:
   post:
-    - git submodule update --init
-test:
-  pre:
-    - mkdir -p $CIRCLE_TEST_REPORTS/cucumber
+    - "git submodule update --init"
+dependencies:
+  cache_directories:
+    - ~/.npm
+    - ~/.meteor
+    - node_modules
+    - ./.meteor/local/build
+    - ./.meteor/local/bundler-cache
+    - ./.meteor/local/isopacks
+    - ./.meteor/local/plugin-cache
+    - /home/ubuntu/nvm/versions/node/v5.2.0/bin
+    - /home/ubuntu/nvm/versions/node/v5.2.0/lib/node_modules
   override:
-    # Create the output folder, because would fail if it does not exist
-    - rm -rf .coverage/ && mkdir .coverage
-
-    # New general
-    - meteor npm run test
-
-    # Unit test using mocha
-    - meteor npm run test-app-unit
-
-    # Integration test using mocha
-    - meteor npm run test-app-full
-
-    # Package test using mocha
-    - meteor npm run coverage-packages
-
-    - rm -rf .coverage/ && mkdir .coverage
-
-      # Unit test using mocha
-
-     # Integration test using mocha
-     - meteor npm run coverage-app-full
-
-    - rm -rf .coverage/ && mkdir .coverage
-
-      # Package test using mocha
-    - meteor npm run test-packages
-
-      # Package test using tinytest + coverage
-      # is not supported anymore
-
-
-
-    # Reliability mocha package test ~100 tests WITH coverage !!!!!!!!!!!!!!!!!!!!!!!!!!!
-    # (then without coverage ...,) see below
-    # and then everything with full app &  unit
-    # Thanks circle.ci for these hours of tests
-
-
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-
-
-
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-
-
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-
-
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-    - meteor npm run coverage-packages
-
-
-
-
-
-    # Reliability test ~100 tests without coverage !!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-
-
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-
-
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-    - meteor npm run test-packages
-
-
-    # Reliability full app test ~100 tests WITH coverage !!!!!!!!!!!!!!!!!!!!!!!!!!!
-    # (then without coverage ...,) see below
-    # and then everything with unit test
-    # Thanks circle.ci for these hours of tests
-
-
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-
-
-
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-
-
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-
-
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-    - meteor npm run coverage-app-full
-
-
-
-
-
-    # Reliability test ~100 tests without coverage !!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-
-
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-
-
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-    - meteor npm run test-app-full
-
-
-    # Reliability test ~100 tests WITH coverage !!!!!!!!!!!!!!!!!!!!!!!!!!!
-    # (then without coverage ...,) see below
-
-
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-
-
-
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-
-
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-
-
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-    - meteor npm run coverage-app-unit
-
-
-
-
-
-    # Reliability test ~100 tests without coverage !!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-
-
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-
-
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
-    - meteor npm run test-app-unit
+    - "curl https://install.meteor.com | /bin/sh"
+    - "meteor npm install"
+test:
+  override:
+  pre:
+    - "mkdir -p $CIRCLE_TEST_REPORTS/cucumber"
+    - "meteor npm run test"
+    - "meteor npm run coverage-app-unit"
+    - "rm -rf .coverage/ && mkdir .coverage"
+    - "meteor npm run coverage-app-full"
+    - "rm -rf .coverage/ && mkdir .coverage"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run test-app-init"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run coverage-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run test-packages"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run coverage-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run test-app-full"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run coverage-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
+    - "meteor npm run test-app-unit"
