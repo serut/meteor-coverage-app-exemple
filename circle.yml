@@ -37,6 +37,21 @@ test:
     # Package test using mocha
     - meteor npm run coverage-packages
 
+    - rm -rf .coverage/ && mkdir .coverage
+
+      # Unit test using mocha
+
+     # Integration test using mocha
+     - meteor npm run coverage-app-full
+
+    - rm -rf .coverage/ && mkdir .coverage
+
+      # Package test using mocha
+    - meteor npm run test-packages
+
+      # Package test using tinytest + coverage
+      # is not supported anymore
+
 
 
     # Reliability mocha package test ~100 tests WITH coverage !!!!!!!!!!!!!!!!!!!!!!!!!!!

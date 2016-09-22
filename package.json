@@ -3,6 +3,7 @@
     "pretest": "npm run lint --silent",
     "start": "meteor",
     "test": "meteor npm run coverage-app-unit && meteor npm run coverage-app-full && meteor npm run coverage-packages",
+    "test:app": "meteor npm run coverage-app-unit && meteor npm run coverage-app-full && meteor npm run coverage-packages",
     "test-app-unit": "spacejam-mocha test",
     "test-app-unit-watch": "meteor-mocha test",
     "coverage-app-unit": "spacejam-mocha test --coverage 'out_lcovonly out_coverage out_html'",
