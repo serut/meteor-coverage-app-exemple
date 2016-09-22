@@ -19,7 +19,7 @@ Package.onUse(function (api) {
 
 Package.onTest(function (api) {
   api.use(['ecmascript', 'tinytest']);
-  api.use(['practicalmeteor:mocha@2.4.5_6', 'lmieulet:meteor-coverage@0.9.6']);
+  api.use(['practicalmeteor:mocha@2.4.5_6', 'lmieulet:meteor-coverage@1.0.1']);
   api.use('cgalvarez:school');
   api.mainModule('server/school.test.js', 'server');
 });
