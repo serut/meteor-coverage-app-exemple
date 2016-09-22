@@ -18,6 +18,7 @@ dependencies:
   override:
     - "curl https://install.meteor.com | /bin/sh"
     - "meteor npm install"
+    - "meteor npm update"
 test:
   override:
   pre:
