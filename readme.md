@@ -2,11 +2,6 @@
 | ----------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | -----------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | [![Build Status](https://travis-ci.org/serut/meteor-coverage-app-exemple.svg?branch=master)](https://travis-ci.org/serut/meteor-coverage-app-exemple) | [![Circle CI](https://circleci.com/gh/serut/meteor-coverage-app-exemple.svg?style=svg)](https://circleci.com/gh/serut/meteor-coverage-app-exemple) | [![Coverage Status](https://coveralls.io/repos/github/serut/meteor-coverage-app-exemple/badge.svg?branch=master)](https://coveralls.io/github/serut/meteor-coverage-app-exemple?branch=master) | [![codecov](https://codecov.io/gh/serut/meteor-coverage-app-exemple/branch/master/graph/badge.svg)](https://codecov.io/gh/serut/meteor-coverage-app-exemple) |
 
-## What's up?
-
-Unfortunately, the combo `meteor-coverage` & `spacejam` is unstable, with 1 to 10 % chance to fail a test with a phantomjs error that some ES6 is undefined (=corrupted).  
-You can see on the [circle ci page](https://circleci.com/gh/serut/meteor-coverage-app-exemple) some tests with +150 times the same test and that just fail.
-
 ## How to test your app
 
 #### Test package using tinytest
