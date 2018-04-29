@@ -1,0 +1,19 @@
+{
+  "name": "bare-exemple",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test:watch": "TEST_WATCH=1 meteor test --driver-package meteortesting:mocha",
+    "test:coverage-watch": "COVERAGE=1 COVERAGE_APP_FOLDER=$PWD/ TEST_WATCH=1 meteor test --driver-package meteortesting:mocha",
+    "test:coverage": "TEST_BROWSER_DRIVER=phantomjs COVERAGE=1 COVERAGE_OUT_LCOVONLY=1 COVERAGE_OUT_HTML=1 COVERAGE_OUT_TEXT_SUMMARY=1 COVERAGE_APP_FOLDER=$PWD/ meteor test --once --driver-package meteortesting:mocha"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.42",
+    "meteor-node-stubs": "^0.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "phantomjs-prebuilt": "^2.1.16"
+  }
+}
