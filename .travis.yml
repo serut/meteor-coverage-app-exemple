@@ -14,9 +14,11 @@ before_install:
   - if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
   - meteor npm install
 
+before_script: cd bare-exemple/
+
 script:
-    # Run all tests:  Unit test, Integration test, Package test
-  - meteor npm run test
+    # Run all Unit tests
+  - meteor npm run test:coverage
     # Save coverage now
   - cat .coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js || true # ignore coveralls error
   - cat .coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js || true # ignore codecov error
