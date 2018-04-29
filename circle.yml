@@ -17,9 +17,8 @@ dependencies:
     - /home/ubuntu/nvm/versions/node/v5.2.0/lib/node_modules
   override:
     - "curl https://install.meteor.com | /bin/sh"
-    - "cd bare-exemple"
-    - "meteor npm install"
-    - "meteor npm update"
+    - "cd bare-exemple && meteor npm install"
+    - "cd bare-exemple && meteor npm update"
 test:
   override:
   pre:
