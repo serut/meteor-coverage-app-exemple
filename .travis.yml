@@ -12,11 +12,12 @@ before_install:
   - PATH=$PATH:$HOME/.meteor
   # Download Meteor
   - if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
-  - meteor npm install
 
 before_script: cd bare-exemple/
 
 script:
+    # install dependencies
+  - meteor npm install
     # Run all Unit tests
   - meteor npm run test:coverage
     # Save coverage now
