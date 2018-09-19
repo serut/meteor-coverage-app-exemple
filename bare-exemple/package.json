@@ -8,10 +8,16 @@
   },
   "scripts": {
     "start": "meteor run",
-    "test": "TEST_BROWSER_DRIVER=phantomjs meteor test --once --driver-package meteortesting:mocha --raw-logs",
-    "test:watch": "TEST_BROWSER_DRIVER=phantomjs TEST_WATCH=1 meteor test --driver-package meteortesting:mocha --raw-logs",
-    "test:coverage": "TEST_BROWSER_DRIVER=phantomjs COVERAGE=1 COVERAGE_OUT_HTML=1 COVERAGE_APP_FOLDER=$PWD/ meteor test --once --driver-package meteortesting:mocha --raw-logs",
-    "test:browser": "TEST_WATCH=1 meteor test --driver-package meteortesting:mocha --raw-logs"
+    "test": "meteor npm run test:unit && meteor npm run test:packages",
+    "test:coverage": "meteor npm run test:unit:coverage && meteor npm run test:packages:coverage",
+    "test:unit": "TEST_BROWSER_DRIVER=phantomjs meteor test --once --driver-package meteortesting:mocha --raw-logs",
+    "test:unit:watch": "TEST_BROWSER_DRIVER=phantomjs TEST_WATCH=1 meteor test --driver-package meteortesting:mocha --raw-logs",
+    "test:unit:coverage": "TEST_BROWSER_DRIVER=phantomjs COVERAGE=1 COVERAGE_OUT_HTML=1 COVERAGE_APP_FOLDER=$PWD/ meteor test --once --driver-package meteortesting:mocha --raw-logs",
+    "test:unit:browser": "TEST_WATCH=1 meteor test --driver-package meteortesting:mocha --raw-logs",
+    "test:packages": "TEST_BROWSER_DRIVER=phantomjs meteor test-packages --once --driver-package=meteortesting:mocha --raw-logs",
+    "test:packages:watch": "TEST_BROWSER_DRIVER=phantomjs TEST_WATCH=1 meteor test-packages --driver-package=meteortesting:mocha --raw-logs",
+    "test:packages:coverage": "TEST_BROWSER_DRIVER=phantomjs COVERAGE=1 COVERAGE_OUT_HTML=1 COVERAGE_APP_FOLDER=$PWD/ meteor test-packages --once --driver-package=meteortesting:mocha --raw-logs",
+    "test:packages:browser": "TEST_WATCH=1 meteor test-packages --driver-package meteortesting:mocha --raw-logs"
   },
   "dependencies": {
     "@babel/runtime": "7.0.0-beta.55",
