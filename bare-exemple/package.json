@@ -1,6 +1,11 @@
 {
   "name": "bare-exemple",
   "private": true,
+  "babel": {
+    "plugins": [
+      "istanbul"
+    ]
+  },
   "scripts": {
     "start": "meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
@@ -13,6 +18,7 @@
     "meteor-node-stubs": "^0.3.2"
   },
   "devDependencies": {
+    "babel-plugin-istanbul": "^5.0.1",
     "chai": "^4.1.2",
     "codacy-coverage": "^2.0.0",
     "codecov.io": "^0.1.6",
