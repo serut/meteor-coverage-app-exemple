@@ -1,0 +1,21 @@
+{
+  "name": "meteor-school",
+  "version": "0.1.0",
+  "description": "A tool for loading resources from a variety of external CDNs at the client side",
+  "main": "server/build/school.js",
+  "scripts": {
+    "setup": "meteor npm install"
+  },
+  "keywords": [
+    "test",
+    "example",
+    "typescript"
+  ],
+  "author": {
+    "name": "Carlos García Álvarez"
+  },
+  "typings": "server/school.d.ts",
+  "devDependencies": {
+    "spacejam": "https://github.com/serut/spacejam/tarball/windows-suppport-rc4"
+  }
+}
