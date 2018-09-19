@@ -8,10 +8,10 @@
   },
   "scripts": {
     "start": "meteor run",
-    "test": "meteor test --once --driver-package meteortesting:mocha",
-    "test:watch": "TEST_WATCH=1 meteor test --driver-package meteortesting:mocha",
-    "test:coverage-watch": "COVERAGE=1 COVERAGE_APP_FOLDER=$PWD/ TEST_WATCH=1 meteor test --driver-package meteortesting:mocha",
-    "test:coverage": "TEST_BROWSER_DRIVER=phantomjs COVERAGE=1 COVERAGE_OUT_LCOVONLY=1 COVERAGE_OUT_HTML=1 COVERAGE_OUT_TEXT_SUMMARY=1 COVERAGE_APP_FOLDER=$PWD/ meteor test --once --driver-package meteortesting:mocha"
+    "test": "TEST_BROWSER_DRIVER=phantomjs meteor test --once --driver-package meteortesting:mocha --raw-logs",
+    "test:watch": "TEST_BROWSER_DRIVER=phantomjs TEST_WATCH=1 meteor test --driver-package meteortesting:mocha --raw-logs",
+    "test:coverage": "TEST_BROWSER_DRIVER=phantomjs COVERAGE=1 COVERAGE_OUT_HTML=1 COVERAGE_APP_FOLDER=$PWD/ meteor test --once --driver-package meteortesting:mocha --raw-logs",
+    "test:browser": "TEST_WATCH=1 meteor test --driver-package meteortesting:mocha --raw-logs"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.42",
