@@ -1,5 +1,5 @@
-import { chai } from 'meteor/practicalmeteor:chai';
-var chaiAsPromised = require("chai-as-promised");
+import chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
 chai.use(chaiAsPromised);
 import Mock from "./mock.tests.js";
 

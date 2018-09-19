@@ -1,5 +1,9 @@
-import {chai} from 'meteor/practicalmeteor:chai';
-var _should = chai.should();
+import chai from 'chai';
+import sinon from 'sinon';
+import sinonChai from 'sinon-chai';
+
+chai.should();
+chai.use(sinonChai);
 
 describe('TypeScript school package', function () {
   it('creates empty Hogwarts', function () {
@@ -29,12 +33,12 @@ describe('TypeScript school package', function () {
     let hogwarts = new School(name);
 
     // enrollment
-    spies.create('enrollStudent', hogwarts, 'enrollStudent');
+    const enrollStudent = sinon.spy(hogwarts, 'enrollStudent');
     hogwarts.enrollStudent(newStudent);
     hogwarts.enrollStudent(newStudent);
 
     // assertions
-    spies.enrollStudent.should.have.been.calledTwice.and.returned(undefined);
+    enrollStudent.should.have.been.calledTwice.and.returned(undefined);
     hogwarts._students.length.should.equal(1);
     hogwarts.should.respondTo('getStudentInfo');
     hogwarts.getStudentInfo('Harry Potter').should.deep.equal(newStudent);
