@@ -1,22 +1,34 @@
 {
   "name": "bare-exemple",
   "private": true,
+  "babel": {
+    "plugins": [
+      "istanbul"
+    ]
+  },
   "scripts": {
     "start": "meteor run",
-    "test": "meteor test --once --driver-package meteortesting:mocha",
-    "test:watch": "TEST_WATCH=1 meteor test --driver-package meteortesting:mocha",
-    "test:coverage-watch": "COVERAGE=1 COVERAGE_APP_FOLDER=$PWD/ TEST_WATCH=1 meteor test --driver-package meteortesting:mocha",
-    "test:coverage": "TEST_BROWSER_DRIVER=phantomjs COVERAGE=1 COVERAGE_OUT_LCOVONLY=1 COVERAGE_OUT_HTML=1 COVERAGE_OUT_TEXT_SUMMARY=1 COVERAGE_APP_FOLDER=$PWD/ meteor test --once --driver-package meteortesting:mocha"
+    "test": "meteor npm run test:unit && meteor npm run test:packages",
+    "test:coverage": "meteor npm run test:unit:coverage && meteor npm run test:packages:coverage",
+    "test:unit": "TEST_BROWSER_DRIVER=puppeteer meteor test --once --driver-package meteortesting:mocha --raw-logs",
+    "test:unit:watch": "TEST_BROWSER_DRIVER=puppeteer TEST_WATCH=1 meteor test --driver-package meteortesting:mocha --raw-logs",
+    "test:unit:coverage": "TEST_BROWSER_DRIVER=puppeteer COVERAGE=1 COVERAGE_OUT_HTML=1 COVERAGE_APP_FOLDER=$PWD/ meteor test --once --driver-package meteortesting:mocha --raw-logs",
+    "test:unit:browser": "TEST_WATCH=1 meteor test --driver-package meteortesting:mocha --raw-logs",
+    "test:packages": "TEST_BROWSER_DRIVER=puppeteer meteor test-packages --once --driver-package=meteortesting:mocha --raw-logs",
+    "test:packages:watch": "TEST_BROWSER_DRIVER=puppeteer TEST_WATCH=1 meteor test-packages --driver-package=meteortesting:mocha --raw-logs",
+    "test:packages:coverage": "TEST_BROWSER_DRIVER=puppeteer COVERAGE=1 COVERAGE_OUT_HTML=1 COVERAGE_APP_FOLDER=$PWD/ meteor test-packages --once --driver-package=meteortesting:mocha --raw-logs",
+    "test:packages:browser": "TEST_WATCH=1 meteor test-packages --driver-package meteortesting:mocha --raw-logs"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.42",
+    "@babel/runtime": "7.0.0-beta.55",
     "meteor-node-stubs": "^0.3.2"
   },
   "devDependencies": {
+    "babel-plugin-istanbul": "^5.0.1",
     "chai": "^4.1.2",
     "codacy-coverage": "^2.0.0",
     "codecov.io": "^0.1.6",
     "coveralls": "^2.11.11",
-    "phantomjs-prebuilt": "^2.1.16"
+    "puppeteer": "^1.5.0"
   }
 }
