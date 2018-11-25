@@ -23,12 +23,11 @@ before_install:
 
   # Install dependencies
   - npm install -g eslint coveralls codecov.io codacy-coverage
-  - cd bare-exemple/ && meteor npm install
 
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - cd bare-exemple/
+  - cd bare-exemple/ && meteor npm install
 
 script:
   - meteor npm run test:coverage
