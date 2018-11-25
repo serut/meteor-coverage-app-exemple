@@ -1,25 +1,13 @@
-machine:
-  node:
-    version: "5.2.0"
-checkout:
-  post:
-    - "git submodule update --init"
-dependencies:
-  cache_directories:
-    - ~/.npm
-    - ~/.meteor
-    - node_modules
-    - ./.meteor/local/build
-    - ./.meteor/local/bundler-cache
-    - ./.meteor/local/isopacks
-    - ./.meteor/local/plugin-cache
-    - /home/ubuntu/nvm/versions/node/v5.2.0/bin
-    - /home/ubuntu/nvm/versions/node/v5.2.0/lib/node_modules
-  override:
-    - "curl https://install.meteor.com | /bin/sh"
-    - "cd bare-exemple && meteor npm install"
-    - "cd bare-exemple && meteor npm update"
-test:
-  override:
-  pre:
-    - "cd bare-exemple && meteor npm run test:coverage"
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest-browsers
+    working_directory: ~/meteor-coverage
+    steps:
+      - checkout
+      - run: curl https://install.meteor.com | /bin/sh
+      - run: cd bare-exemple
+      - run: meteor npm install
+      - run: meteor npm run test:coverage
+      - run: meteor npm run lint || true # ignore eslint error
