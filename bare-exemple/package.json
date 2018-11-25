@@ -20,7 +20,7 @@
     "test:packages:browser": "TEST_WATCH=1 meteor test-packages --driver-package meteortesting:mocha --raw-logs"
   },
   "dependencies": {
-    "@babel/runtime": "7.0.0-beta.55",
+    "@babel/runtime": "^7.1.5",
     "meteor-node-stubs": "^0.3.2"
   },
   "devDependencies": {

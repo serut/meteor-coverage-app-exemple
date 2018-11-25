@@ -21,7 +21,7 @@ kadira:flow-router      # FlowRouter is a very simple router for Meteor
 kadira:blaze-layout     # Layout manager for blaze (works well with FlowRouter)
 less@2.8.0                    # Leaner CSS language
 
-meteortesting:mocha@1.1.0               # A package for writing and running your meteor app and package tests with mocha
+meteortesting:mocha               # A package for writing and running your meteor app and package tests with mocha
 johanbrook:publication-collector  # Test a Meteor publication by collecting its output
 lmieulet:meteor-coverage@3.0.0
 underscore@1.0.10
