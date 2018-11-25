@@ -10,3 +10,4 @@ jobs:
       - run: cd bare-exemple && meteor npm install
       - run: cd bare-exemple && meteor npm run test:coverage
       - run: cd bare-exemple && meteor npm run lint || true # ignore eslint error
+      - run: cat bare-exemple/.coverage/lcov.info
