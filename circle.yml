@@ -7,7 +7,6 @@ jobs:
     steps:
       - checkout
       - run: curl https://install.meteor.com | /bin/sh
-      - run: cd bare-exemple
-      - run: meteor npm install
-      - run: meteor npm run test:coverage
-      - run: meteor npm run lint || true # ignore eslint error
+      - run: cd bare-exemple && meteor npm install
+      - run: cd bare-exemple && meteor npm run test:coverage
+      - run: cd bare-exemple && meteor npm run lint || true # ignore eslint error
