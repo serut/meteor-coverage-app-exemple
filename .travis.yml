@@ -28,6 +28,6 @@ before_script:
 
 script:
   - meteor npm run test:coverage
+  - cat .coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
   - sed -i 's/^SF:/SF:bare-exemple\//g' .coverage/lcov.info
   - cat .coverage/lcov.info | node_modules/codecov.io/bin/codecov.io.js
-  - cat .coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
