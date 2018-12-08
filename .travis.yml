@@ -24,7 +24,11 @@ before_install:
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - cd bare-exemple/ && meteor npm install
+  - cd bare-exemple/ && meteor npm install && meteor npm install coveralls codecov.io codacy-coverage
 
 script:
   - meteor npm run test:coverage
+  - sed -i 's/^SF:/SF:bare-exemple\//g' .coverage/lcov.info
+  - cat .coverage/lcov.info | node_modules/codecov.io/bin/codecov.io.js
+  - cat .coverage/lcov.info | node_modules/codacy-coverage/bin/codacy-coverage.js
+  - cat .coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
