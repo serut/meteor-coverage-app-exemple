@@ -10,5 +10,5 @@ jobs:
       - run: cd bare-exemple && meteor npm install && meteor npm install coveralls codecov.io codacy-coverage
       - run: cd bare-exemple && meteor npm run test:coverage
       - run: sed -i 's/^SF:/SF:bare-exemple\//g' bare-exemple/.coverage/lcov.info
-      - run: cat bare-exemple/.coverage/lcov.info | bare-exemple/node_modules/codecov.io/bin/codecov.io.js || true
-      - run: cat bare-exemple/.coverage/lcov.info | bare-exemple/node_modules/codacy-coverage/bin/codacy-coverage.js || true
+      - run: cat bare-exemple/.coverage/lcov.info | bare-exemple/node_modules/codecov.io/bin/codecov.io.js
+      - run: cat bare-exemple/.coverage/lcov.info | bare-exemple/node_modules/codacy-coverage/bin/codacy-coverage.js
