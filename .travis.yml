@@ -29,7 +29,7 @@ before_script:
 
 script:
   - meteor npm run test:coverage
-  - sed .coverage/lcov.info | coveralls || true # ignore coveralls error
+  - cat .coverage/lcov.info | coveralls || true # ignore coveralls error
   - sed -i 's/^SF:/SF:bare-exemple\//g' .coverage/lcov.info
   - cat .coverage/lcov.info | codecov || true # ignore codecov error
   - cat .coverage/lcov.info | codacy-coverage || true # ignore codacy error

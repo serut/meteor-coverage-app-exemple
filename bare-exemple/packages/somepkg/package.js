@@ -19,12 +19,12 @@ Package.onUse(function (api) {
 Package.onTest(function (api) {
   api.use('ecmascript');
   api.use('tinytest');
-  api.use(['meteortesting:mocha', 'lmieulet:meteor-packages-coverage@0.2.0', 'lmieulet:meteor-coverage@3.0.0']);
+  api.use(['meteortesting:mocha', 'lmieulet:meteor-packages-coverage@0.2.0', 'lmieulet:meteor-coverage@3.1.1']);
   api.use('somepkg');
   api.mainModule('somepkg-tests.js');
-
+  api.addFiles(['some.pck.test.js'])
   Npm.depends({
-    chai: '2.1.0',
-    'chai-as-promised': '5.3.0',
+    chai: '4.2.0',
+    'chai-as-promised': '7.1.1',
   });
 });

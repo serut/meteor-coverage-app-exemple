@@ -26,9 +26,9 @@
   "devDependencies": {
     "babel-plugin-istanbul": "^5.1.0",
     "chai": "^4.2.0",
-    "codacy-coverage": "^3.3.0",
+    "codacy-coverage": "^3.4.0",
     "codecov.io": "^0.1.6",
     "coveralls": "^3.0.2",
-    "puppeteer": "^1.10.0"
+    "puppeteer": "^1.12.2"
   }
 }
