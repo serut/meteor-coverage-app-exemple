@@ -1,0 +1,42 @@
+{
+  "name": "meteor-react-ts-starter",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "debug": "meteor run --inspect",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test:watch": "cross-env TEST_WATCH=1 meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "test:coverage": "cross-env TEST_BROWSER_DRIVER=chrome COVERAGE=1 COVERAGE_OUT_HTML=1 COVERAGE_OUT_LCOVONLY=1 COVERAGE_APP_FOLDER=$PWD/ meteor test --once --driver-package meteortesting:mocha",
+    "test:watch:coverage": "cross-env COVERAGE=1 COVERAGE_VERBOSE=1 COVERAGE_APP_FOLDER=$PWD/ TEST_WATCH=1 meteor test --driver-package meteortesting:mocha"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.1.5",
+    "meteor-node-stubs": "^0.4.1",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "simpl-schema": "^1.5.3"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/enzyme": "^3.1.15",
+    "@types/enzyme-adapter-react-16": "^1.0.3",
+    "@types/meteor": "^1.4.24",
+    "@types/mocha": "^5.2.5",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "@types/simpl-schema": "^0.2.1",
+    "@types/sinon": "^7.0.4",
+    "chai": "^4.2.0",
+    "chromedriver": "^2.45.0",
+    "cross-env": "^5.2.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "selenium-webdriver": "^3.6.0",
+    "sinon": "^7.2.3",
+    "tslint": "^5.12.1",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.2.2"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "alwaysStrict": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es6",
+      "scripthost"
+    ],
+    "allowJs": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "./@types"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*"
+      ]
+    },
+    "outDir": "dist"
+  },
+  "include": [
+    "client/**/*",
+    "server/**/*",
+    "imports/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    ".meteor"
+  ]
+}
