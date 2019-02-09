@@ -8,12 +8,13 @@
     "test:watch": "cross-env TEST_WATCH=1 meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "visualize": "meteor --production --extra-packages bundle-visualizer",
-    "test:coverage": "cross-env TEST_BROWSER_DRIVER=chrome COVERAGE=1 COVERAGE_OUT_HTML=1 COVERAGE_OUT_LCOVONLY=1 COVERAGE_APP_FOLDER=$PWD/ meteor test --once --driver-package meteortesting:mocha",
-    "test:watch:coverage": "cross-env COVERAGE=1 COVERAGE_VERBOSE=1 COVERAGE_APP_FOLDER=$PWD/ TEST_WATCH=1 meteor test --driver-package meteortesting:mocha"
+    "test:coverage": "cross-env TEST_BROWSER_DRIVER=puppeteer COVERAGE=1 COVERAGE_OUT_HTML=1 COVERAGE_OUT_LCOVONLY=1 COVERAGE_APP_FOLDER=$PWD/ meteor test --once --driver-package meteortesting:mocha",
+    "test:watch:coverage": "cross-env COVERAGE=1 COVERAGE_APP_FOLDER=$PWD/ TEST_WATCH=1 meteor test --driver-package meteortesting:mocha"
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
     "meteor-node-stubs": "^0.4.1",
+    "puppeteer": "^1.12.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "simpl-schema": "^1.5.3"
