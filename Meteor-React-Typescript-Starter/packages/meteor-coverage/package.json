@@ -1,0 +1,43 @@
+{
+  "name": "meteor-coverage",
+  "version": "3.1.1",
+  "description": "A meteor package that allows you to get the statement, line, function and branch coverage of Meteor project.   This package uses the [istanbuljs](https://github.com/istanbuljs/istanbuljs) packages for coverage report.   It's a debug only package, so it does not affect your production build.",
+  "main": "server/index.js",
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "istanbul-lib-coverage": "^2.0.1",
+    "istanbul-lib-report": "^2.0.2",
+    "istanbul-reports": "^2.0.1",
+    "mkdirp": "0.5.1",
+    "remap-istanbul": "0.12.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "chai": "^4.2.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-babel": "^5.2.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-mocha": "^5.2.0",
+    "eslint-plugin-promise": "^4.0.1"
+  },
+  "scripts": {
+    "setup-test": "rm -rf ./someapp && meteor create --bare someapp && cd someapp && cp ../.coverage.json . && meteor npm i --save puppeteer && mkdir packages && ln -s ../../ ./packages/meteor-coverage",
+    "test": "meteor npm run setup-test && cd someapp && TEST_BROWSER_DRIVER=puppeteer COVERAGE_VERBOSE=1 COVERAGE=1 COVERAGE_OUT_LCOVONLY=1 COVERAGE_APP_FOLDER=$(pwd)/ meteor test-packages --once --driver-package meteortesting:mocha ./packages/meteor-coverage",
+    "test:watch": "cd someapp && TEST_WATCH=1 COVERAGE_VERBOSE=1 COVERAGE=1 COVERAGE_APP_FOLDER=$(pwd)/ meteor test-packages --driver-package meteortesting:mocha ./packages/meteor-coverage",
+    "start": "meteor npm run lint:fix & meteor npm run test:watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "publish": "METEOR_FORCE_PORTABLE=1 meteor publish",
+    "todobeforepublish": "rm -rf .npm/ node_modules/ meteor-packages-coverage/ .npm/ .vscode/ .circleci/ .github/ someapp/ .travis.yml .versions .eslint*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serut/meteor-coverage.git"
+  },
+  "author": "Léo Mieulet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/serut/meteor-coverage/issues"
+  },
+  "homepage": "https://github.com/serut/meteor-coverage#readme"
+}
