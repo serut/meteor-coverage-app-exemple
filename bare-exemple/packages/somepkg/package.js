@@ -19,7 +19,7 @@ Package.onUse(function (api) {
 Package.onTest(function (api) {
   api.use('ecmascript');
   api.use('tinytest');
-  api.use(['meteortesting:mocha', 'lmieulet:meteor-legacy-coverage@0.1.0', 'lmieulet:meteor-coverage@3.1.1']);
+  api.use(['meteortesting:mocha', 'lmieulet:meteor-legacy-coverage@0.1.0', 'lmieulet:meteor-coverage@3.2.0']);
   api.use('somepkg');
   api.mainModule('somepkg-tests.js');
   api.addFiles(['some.pck.test.js'])

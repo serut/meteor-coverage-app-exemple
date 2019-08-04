@@ -20,15 +20,15 @@
     "test:packages:browser": "TEST_WATCH=1 meteor test-packages --driver-package meteortesting:mocha --raw-logs"
   },
   "dependencies": {
-    "@babel/runtime": "^7.1.5",
+    "@babel/runtime": "^7.0.0-beta.44",
     "meteor-node-stubs": "^0.4.1"
   },
   "devDependencies": {
-    "babel-plugin-istanbul": "^5.1.0",
+    "babel-plugin-istanbul": "^5.2.0",
     "chai": "^4.2.0",
     "codacy-coverage": "^3.4.0",
     "codecov.io": "^0.1.6",
-    "coveralls": "^3.0.2",
-    "puppeteer": "^1.12.2"
+    "coveralls": "^3.0.5",
+    "puppeteer": "^1.19.0"
   }
 }
